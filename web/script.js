@@ -54,7 +54,7 @@ async function getUserMedia() {
   ctx.textBaseline = "top";
 
   const loop = async () => {
-    tf.tidy(() => {
+    tf.tidy(async () => {
       const tfImg = tf.browser.fromPixels(cameraVideo).toInt();
       const expandedImg = tfImg.transpose([0, 1, 2]).expandDims();
       const predictions = await model.executeAsync(expandedImg);
