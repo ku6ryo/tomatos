@@ -1,11 +1,13 @@
 This is a repository tested [this Tensorflow.js object detection](
 https://blog.tensorflow.org/2021/01/custom-object-detection-in-browser.html) on my PC.
 
+![screenshot](./screenshot.png)
+
 # Environment
 OS: Windows 11 Pro
 OS version: 21H2
 OS Build: 22000.556
-Processor: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz 3.60 GHz
+Processor: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
 RAM size: 32GB
 Graphics: NVIDIA GeForce RTX 2080
 Anaconda: Installed with Anaconda3-2021.11-Windows-x86_64.exe
@@ -95,7 +97,7 @@ python models/research/object_detection/exporter_main_v2.py --trained_checkpoint
 ## Tensorflow.js prediction result format is different from the original.
 In the [source code on GIthub](https://github.com/hugozanini/TFJS-object-detection/blob/master/src/index.js#L118), he uses 4, 5 and 6 as indexes to retrive the result of boxes, scores and classes. However, that was different from mine. In my case, those were 1, 0, 3 respectively.
 
-## tensorflow_converter command example
+## tensorflowjs_converter command example
 Instead of the wizard, we can use the following command to convert the model to Tensorflow.js format.
 ```
 tensorflowjs_converter --input_format=tf_saved_model --output_format=tfjs_graph_model inference_graph/saved_model/ tfjs_model
