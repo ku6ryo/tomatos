@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.bin binary
+variables.index binary
+variables.data-* binary
+*.pb binary
