@@ -34,7 +34,7 @@ I0408 17:25:05.044265 22092 model_lib_v2.py:708] {'Loss/classification_loss': 0.
 ```
 
 # Tomato dataset needs to be processed
-Tomato dataset has annotation XML files but it does not contian CSV files as kangaroo dataset. `dtaset_processro` folder contains a script to process the annotation XML files and generates CSVs.
+Tomato dataset has annotation XML files but it does not contian CSV files as kangaroo dataset. `dtaset_processor` folder contains a script to process the annotation XML files and generates CSVs.
 
 # Trained models
 I left the trained models in this repo. `inference_graph_*` contains raw exported Tensorflow saved models. `tfjs_model_*` contains the converted tfjs models. `k` and `t` are the trained models for kangaroos and tomatos. The number means the steps trained.
