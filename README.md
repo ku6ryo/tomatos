@@ -41,6 +41,12 @@ I left the trained models in this repo. `inference_graph_*` contains raw exporte
 
 # Precedure Notes
 
+## Installing protoc
+We need to install protoc to use TensorFlow Object Detection API. On Windows, we can install by Chocolatey.
+```
+choco install protoc
+```
+
 ## Failed to install Kaggle cli
 Installing kaggle-cli did not work. I skipped the following step.
 ```
