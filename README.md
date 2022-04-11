@@ -17,7 +17,7 @@ Anaconda: Installed with Anaconda3-2021.11-Windows-x86_64.exe
 Python: 3.9.12 (As of 2022-04-09 Tensorflow does not support Python 3.10)
 
 # Training time
-On my PC, it took about 2 hours to train the model for kangaroos and 1 hour for tomatos. I've got the following log in every 100 steps. The time took to run a step is about 1 sec and the total steps were 7500.
+On my PC, it took about 2 hours to train the model for kangaroos and 1 hour for tomatos. I've got the following log in every 100 steps. The time took to run a step depends batch size and the dataset.
 ```
 INFO:tensorflow:Step 700 per-step time 1.045s
 I0408 17:25:05.043267 22092 model_lib_v2.py:705] Step 700 per-step time 1.045s
