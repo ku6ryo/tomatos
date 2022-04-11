@@ -65,7 +65,7 @@ async function getUserMedia() {
     }
     */
     // k7500: 1, 0, 3
-    // t7500: [1, 100] -> 1, 3, 7
+    // t7500: 5, 7, 1
     const boxes = predictions[5].arraySync(); // shape [0, 100, 4]
     const scores = predictions[7].arraySync(); // shape [1, 100]
     const classes = predictions[1].dataSync(); // shape [1, 100]
