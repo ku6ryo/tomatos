@@ -7,14 +7,27 @@ https://blog.tensorflow.org/2021/01/custom-object-detection-in-browser.html) on 
 ![screenshot](./screenshot.png)
 
 # Environment
-OS: Windows 11 Pro
-OS version: 21H2
-OS Build: 22000.556
-Processor: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-RAM size: 32GB
-Graphics: NVIDIA GeForce RTX 2080
-Anaconda: Installed with Anaconda3-2021.11-Windows-x86_64.exe
-Python: 3.9.12 (As of 2022-04-09 Tensorflow does not support Python 3.10)
+- OS: Windows 11 Pro
+- OS version: 21H2
+- OS Build: 22000.556
+- Processor: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+- RAM size: 32GB
+- Graphics: NVIDIA GeForce RTX 2080
+- Anaconda: Installed with Anaconda3-2021.11-Windows-x86_64.exe
+- Python: 3.9.12 (As of 2022-04-09 Tensorflow does not support Python 3.10)
+
+# Performance
+I checked FPS of tomato model
+- Windows 11 Pro:
+  - CPU: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+  - GPU: NVIDIA GeForce RTX 2080
+  - FPS: ~17
+- Xperia 5 II
+  - Android 11
+  - FPS: ~7
+- iPhone 11
+  - iOS 15
+  - FPS: ~12
 
 # Training time
 On my PC, it took about 2 hours to train the model for kangaroos and 1 hour for tomatos. I've got the following log in every 100 steps. The time took to run a step depends batch size and the dataset.
