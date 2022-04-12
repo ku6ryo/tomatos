@@ -17,6 +17,7 @@ async function getUserMedia() {
 }
 
 ;(async () => {
+  const stats = new Stats();
   const model = await tf.loadGraphModel("/model/model.json");
   const stream = await getUserMedia()
   if (!stream) {
@@ -53,8 +54,12 @@ async function getUserMedia() {
   ctx.font = font;
   ctx.textBaseline = "top";
 
+  document.body.appendChild(stats.dom)
+
   const loop = async () => {
+    stats.begin()
     tf.engine().startScope()
+    await tf.setBackend("webgl")
     const tfImg = tf.browser.fromPixels(cameraVideo).toInt();
     const expandedImg = tfImg.transpose([0, 1, 2]).expandDims();
     const predictions = await model.executeAsync(expandedImg);
@@ -120,6 +125,7 @@ async function getUserMedia() {
       ctx.fillText(item["label"] + " " + (100*item["score"]).toFixed(2) + "%", x, y);
     });
     tf.engine().endScope()
+    stats.end()
     requestAnimationFrame(loop)
   }
   requestAnimationFrame(loop)

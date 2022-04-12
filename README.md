@@ -107,6 +107,8 @@ python models/research/object_detection/model_main_tf2.py --pipeline_config_path
 python models/research/object_detection/model_main_tf2.py --pipeline_config_path=mobilenet_v2.config --model_dir=training/ --checkpoint_dir=training
 
 python models/research/object_detection/exporter_main_v2.py --trained_checkpoint_dir=training/ --output_directory=inference_graph/ --pipeline_config_path mobilenet_v2.config
+
+python models/research/object_detection/model_main_tf2.py --pipeline_config_path=mobilenet_v2.config --model_dir=training --checkpoint_dir=training/
 ```
 
 ## Tensorflow.js prediction result format is different from the original.
