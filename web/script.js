@@ -16,7 +16,7 @@ async function getUserMedia() {
   }
 }
 
-;(async () => {
+async function main () {
   const stats = new Stats();
   const model = await tf.loadGraphModel("/model/model.json");
   const stream = await getUserMedia()
@@ -129,4 +129,12 @@ async function getUserMedia() {
     requestAnimationFrame(loop)
   }
   requestAnimationFrame(loop)
-})()
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const button = document.createElement("button");
+  button.innerHTML = "Start";
+  button.disabled = true
+  button.addEventListener("click", main);
+  document.body.appendChild(button);
+})
