@@ -16,7 +16,7 @@ async function main () {
     throw new Error("media stream not available")
   }
   const cameraVideo = document.createElement("video");
-  cameraVideo.playsinline = true;
+  cameraVideo.playsInline = true;
   cameraVideo.muted = true
   cameraVideo.autoplay = true
   cameraVideo.srcObject = stream;
