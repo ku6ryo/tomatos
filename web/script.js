@@ -1,17 +1,7 @@
 async function getUserMedia() {
   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     return await navigator.mediaDevices.getUserMedia({
-      video: {
-        facingMode: {
-          exact: "environment",
-        },
-        width: {
-          ideal: 600,
-        },
-        height: {
-          ideal: 500,
-        }
-      },
+      video: true,
     })
   } else {
     alert("getUserMedia not supported on your browser!");
@@ -26,6 +16,9 @@ async function main () {
     throw new Error("media stream not available")
   }
   const cameraVideo = document.createElement("video");
+  cameraVideo.playsinline = true;
+  cameraVideo.muted = true
+  cameraVideo.autoplay = true
   cameraVideo.srcObject = stream;
   cameraVideo.play();
   await (new Promise((resolve, reject) => {
@@ -133,12 +126,4 @@ async function main () {
   requestAnimationFrame(loop)
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  const button = document.createElement("button");
-  button.innerHTML = "Start";
-  button.addEventListener("click", () => {
-    button.disabled = true
-    main()
-  });
-  document.body.appendChild(button);
-})
+main()
