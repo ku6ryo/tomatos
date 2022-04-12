@@ -134,7 +134,9 @@ async function main () {
 window.addEventListener("DOMContentLoaded", () => {
   const button = document.createElement("button");
   button.innerHTML = "Start";
-  button.disabled = true
-  button.addEventListener("click", main);
+  button.addEventListener("click", () => {
+    button.disabled = true
+    main()
+  });
   document.body.appendChild(button);
 })
