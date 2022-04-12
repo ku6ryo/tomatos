@@ -25,6 +25,9 @@ I checked FPS of tomato model
 - Xperia 5 II
   - Android 11
   - FPS: ~7
+- P20 lite
+  - Android 9
+  - FPS: < 1
 - iPhone 11
   - iOS 15
   - FPS: ~12
